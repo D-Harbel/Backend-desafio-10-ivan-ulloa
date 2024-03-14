@@ -316,6 +316,8 @@ paths:
       responses:
         '200':
           description: Producto eliminado del carrito exitosamente
+        '403':
+          description: Solo pueden acceder los usuario con rol USER o PREMIUM.
         '500':
           description: Error interno del servidor
     put:
@@ -353,6 +355,8 @@ paths:
           description: Cantidad de producto en el carrito actualizada exitosamente
         "400":
           description: Error en los datos proporcionados
+        '403':
+          description: Solo pueden acceder los usuario con rol USER o PREMIUM.
         "404":
           description: Carrito o producto no encontrado en el carrito
         "500":
@@ -375,6 +379,8 @@ paths:
       responses:
         '200':
           description: Compra completada con éxito
+        '403':
+          description: Solo pueden acceder los usuario con rol USER o PREMIUM.
         '404':
           description: Carrito no encontrado
         '500':

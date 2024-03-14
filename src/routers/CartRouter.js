@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cartController = require('../controllers/cartController');
-const { redirectToHomeIfAdmin } = require('../middleware/authorization');
+const { redirectToHomeIfAdmin, } = require('../middleware/authorization');
 
 
 module.exports = function (io) {
