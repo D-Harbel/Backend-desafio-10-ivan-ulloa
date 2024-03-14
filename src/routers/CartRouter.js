@@ -13,5 +13,6 @@ module.exports = function (io) {
     router.put('/:cid/products/:pid', redirectToHomeIfAdmin, cartController.updateQuantityInCart);
     router.delete('/:cid',  cartController.deleteAllProductsInCart);
     router.post('/:cid/purchase', redirectToHomeIfAdmin, cartController.purchaseCart);
+    
     return router;
 }

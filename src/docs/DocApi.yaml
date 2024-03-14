@@ -1,3 +1,10 @@
+securitySchemes:
+  SessionAuth:
+    type: apiKey
+    in: cookie
+    name: connect.sid
+
+
 paths:
   /api/products:
     get:
@@ -27,6 +34,9 @@ paths:
           description: Error interno del servidor
     post:
       summary: Agregar un nuevo producto
+      description: Ruta protegida en la que solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      security:
+        - SessionAuth: []
       tags:
         - Productos
       requestBody:
@@ -89,6 +99,7 @@ paths:
           description: Error interno del servidor
     put:
       summary: Actualizar un producto existente
+      description: Ruta protegida en la que solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       tags:
         - Productos
       parameters:
@@ -127,6 +138,8 @@ paths:
                   items:
                     type: string
                   description: Nuevas URLs de las imagenes del producto
+      security:
+        - SessionAuth: []
       responses:
         "200":
           description: Producto actualizado exitosamente
@@ -140,6 +153,7 @@ paths:
           description: error interno del servidor
     delete:
       summary: Eliminar un producto existente
+      description: Ruta protegida en la que solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       tags:
         - Productos
       parameters:
@@ -149,6 +163,8 @@ paths:
           schema:
             type: string
           description: ID del producto a eliminar
+      security:
+        - SessionAuth: []
       responses:
         "200":
           description: Producto eliminado exitosamente
@@ -243,6 +259,9 @@ paths:
   /api/carts/{cid}/products:
     post:
       summary: Agregar un producto al carrito
+      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      security:
+        - SessionAuth: []
       tags:
         - Carrito
       parameters:
@@ -276,6 +295,9 @@ paths:
   /api/carts/{cid}/products/{pid}:
     delete:
       summary: Eliminar un producto del carrito
+      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      security:
+        - SessionAuth: []
       tags:
         - Carrito
       parameters:
@@ -298,6 +320,9 @@ paths:
           description: Error interno del servidor
     put:
       summary: Actualizar la cantidad de un producto en el carrito
+      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      security:
+        - SessionAuth: []
       tags: 
         - Carrito
       parameters:
@@ -335,6 +360,9 @@ paths:
   /api/carts/{cid}/purchase:
     post:
       summary: Finalizar la compra del carrito
+      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      security:
+        - SessionAuth: []
       tags:
         - Carrito
       parameters:
@@ -351,4 +379,3 @@ paths:
           description: Carrito no encontrado
         '500':
           description: Error interno del servidor
-
