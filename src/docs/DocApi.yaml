@@ -34,7 +34,7 @@ paths:
           description: Error interno del servidor
     post:
       summary: Agregar un nuevo producto
-      description: Ruta protegida en la que solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      description: Ruta protegida, solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       security:
         - SessionAuth: []
       tags:
@@ -99,7 +99,7 @@ paths:
           description: Error interno del servidor
     put:
       summary: Actualizar un producto existente
-      description: Ruta protegida en la que solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      description: Ruta protegida, solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       tags:
         - Productos
       parameters:
@@ -153,7 +153,7 @@ paths:
           description: error interno del servidor
     delete:
       summary: Eliminar un producto existente
-      description: Ruta protegida en la que solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      description: Ruta protegida, solo el ADMIN o usuarios PREMIUM pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       tags:
         - Productos
       parameters:
@@ -259,7 +259,7 @@ paths:
   /api/carts/{cid}/products:
     post:
       summary: Agregar un producto al carrito
-      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      description: Ruta protegida, solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       security:
         - SessionAuth: []
       tags:
@@ -295,7 +295,7 @@ paths:
   /api/carts/{cid}/products/{pid}:
     delete:
       summary: Eliminar un producto del carrito
-      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      description: Ruta protegida, solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       security:
         - SessionAuth: []
       tags:
@@ -322,7 +322,7 @@ paths:
           description: Error interno del servidor
     put:
       summary: Actualizar la cantidad de un producto en el carrito
-      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      description: Ruta protegida, solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       security:
         - SessionAuth: []
       tags: 
@@ -364,7 +364,7 @@ paths:
   /api/carts/{cid}/purchase:
     post:
       summary: Finalizar la compra del carrito
-      description: Ruta protegida en la que solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
+      description: Ruta protegida, solo usuarios PREMIUM o USER pueden acceder. iniciar sesion con el rol correspodiente antes de realizar pruebas
       security:
         - SessionAuth: []
       tags:
